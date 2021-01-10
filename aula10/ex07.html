@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Somando Numeros</title>
+    <title>Calculadora de 2 Termos</title>
     <style>
         body{
             font: 18pt;
         }
 
         input{
-            font: normal 18pt Arial;
+            font: normal 12pt Arial;
         }
 
         div{
-            font-size: 25pt;
-            color: rgb(167, 14, 40);
+            font-size: 20pt;
+            color: rgb(0, 0, 0);
+            font-weight: bolder;
             margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1" size="5">
-    <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="+" onclick="somar()">
-    <input type="button" value="-" onclick="sub()">
-    <input type="button" value="x" onclick="mult()">
-    <input type="button" value="/" onclick="divi()">
+    <h1>Informe os valores e a operação desejada</h1>
+    <p><label for="txtn1">1º Termo </label><input type="text" name="txtn1" id="txtn1" size="7"></p>
+    <p><label for="txtn2">2º Termo </label><input type="text" name="txtn2" id="txtn2" size="7"></p>
+    <input type="button" value="      Soma     " onclick="somar()">
+    <input type="button" value="Subtração" onclick="sub()">
+    <p><input type="button" value="Multiplicação" onclick="mult()">
+    <input type="button" value="   Divisão  " onclick="divi()"></p>
     <div id="res">Resultado</div>
     <script>
         function somar(){
@@ -66,9 +67,10 @@
             var res = document.getElementById('res')
             var n1 = parseInt(tn1.value)
             var n2 = parseInt(tn2.value)
-            var divi = n1/n2
+            var divi = parseFloat((n1/n2).toFixed(2))
             res.innerHTML = `A Divisão entre ${n1} e ${n2} é igual a <strong>${divi}</strong`
-        }
+        }        
     </script>
+ 
 </body>
 </html>
