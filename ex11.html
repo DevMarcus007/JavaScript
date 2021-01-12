@@ -12,15 +12,14 @@
     <div id="resp"></div>
     <script>
         function verif(){
-            var nasc = document.getElementById("pais")
-            var resp = document.getElementById("resp")
-            if (nasc == 'Brasil') {
-                resp.innerHTML = `Você nasceu no e é <strong>Estrangeiro</strong>!`
-            } 
-            else {
-                resp.innerHTML = `Você nasceu no e tem nacionalidade <strong>Brasileira</strong>!`
+            var nasc = document.getElementById('pais')
+            var resp = document.getElementById('resp')
+            if (nasc != "BRASIL") {
+                resp.innerHTML = `Você nasceu no ${nasc}e é <strong>Estrangeiro</strong>!`
+            } else {
+                resp.innerHTML = `Você nasceu no ${nasc} e tem nacionalidade <strong>Brasileira</strong>!`
             }
-            resp.innerHTML += `Obrigado`
+            resp.innerHTML += `<p>Obrigado</>`
         }
     </script>
 </body>
