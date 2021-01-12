@@ -6,11 +6,16 @@
     <title>Calculadora de 2 Termos</title>
     <style>
         body{
-            font: 18pt;
+            font: normal 14pt Arial;
+            background: url("fundo.jpg") no-repeat
         }
 
         input{
             font: normal 12pt Arial;
+        }
+
+        label {
+            font-size: 20px;
         }
 
         div{
@@ -18,17 +23,19 @@
             color: rgb(0, 0, 0);
             font-weight: bolder;
             margin-top: 20px;
+            height: 150px;
+            background: url("fundo2.jpg") no-repeat
         }
     </style>
 </head>
 <body>
-    <h1>Informe os valores e a operação desejada</h1>
+    <h1>Informe os valores e a operação desejada</h1>   
     <p><label for="txtn1">1º Termo </label><input type="text" name="txtn1" id="txtn1" size="7"></p>
     <p><label for="txtn2">2º Termo </label><input type="text" name="txtn2" id="txtn2" size="7"></p>
-    <input type="button" value="      Soma     " onclick="somar()">
+    <input type="button" value="Soma" onclick="somar()">
     <input type="button" value="Subtração" onclick="sub()">
-    <p><input type="button" value="Multiplicação" onclick="mult()">
-    <input type="button" value="   Divisão  " onclick="divi()"></p>
+    <input type="button" value="Multiplicação" onclick="mult()">
+    <input type="button" value="Divisão" onclick="divi()">
     <div id="res">Resultado</div>
     <script>
         function somar(){
@@ -69,8 +76,14 @@
             var n2 = parseInt(tn2.value)
             var divi = parseFloat((n1/n2).toFixed(2))
             res.innerHTML = `A Divisão entre ${n1} e ${n2} é igual a <strong>${divi}</strong`
-        }        
+        }
+        
+        function limpaTela() {
+            document.getElementById('txtn1').value=''
+            document.getElementById('txtn2').value=''
+            res.innerHTML = 'Resultado'
+        }
     </script>
- 
+    <input type="button" value="Limpar" onclick="limpaTela()"> 
 </body>
 </html>
